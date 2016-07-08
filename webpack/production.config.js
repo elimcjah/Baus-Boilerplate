@@ -17,6 +17,7 @@ var sassLoaders = [
 ];
 
 var configs = {
+  target: 'web',
   entry: APP_PATH + '/app.js',
   output: {
     path: BUILD_PATH,

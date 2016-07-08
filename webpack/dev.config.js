@@ -15,6 +15,7 @@ var host = process.env.HOST || '0.0.0.0';
 var port = process.env.PORT || 8080;
 
 var config = {
+  target: 'web',
   context: APP_PATH,
   devtool: 'eval-source-map',
   entry: {

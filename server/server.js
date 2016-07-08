@@ -62,6 +62,7 @@ module.exports = {
         console.log(err);
       }
       else {
+        console.log('');
          console.log('  /$$$$$$$    /$$$$$$   /$$   /$$   /$$$$$$ ');
          console.log(' | $$__  $$  /$$__  $$ | $$  | $$  /$$__  $$');
          console.log(' | $$  \\ $$ | $$  \\ $$ | $$  | $$ | $$  \\__/');
