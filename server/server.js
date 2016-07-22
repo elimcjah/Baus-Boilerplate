@@ -15,12 +15,6 @@ const host = process.env.HOST || '0.0.0.0';
 
 const publicPath = path.resolve(__dirname, '../public');
 const templatePath = path.resolve(__dirname, '../app/templates');
-const hbs = handlebars.create({
-  layoutsDir: templatePath + '/_layouts',
-  defaultLayout: 'default',
-  helpers: new require( templatePath + '/_helpers')(),
-  extname: '.hbs'
-});
 
 module.exports = {
   start: function() {
@@ -30,9 +24,7 @@ module.exports = {
     server.set("host", host); 
     server.set("port", port);
 
-    server.engine('.hbs', hbs.engine); 
     server.set('views', templatePath + '/_pages');
-    server.set('view engine', '.hbs');
 
     if (isDev) {
       require('./dev.server.js')(server);
@@ -48,15 +40,8 @@ module.exports = {
         else if (redirectLocation) {
           res.redirect(302, redirectLocation.pathname + redirectLocation.search);
         }
-        else if (renderProps) {
-          const store = configureStore();
-          const initialState = store.getState();
-          const html = render(React)(store, renderProps);
-
-          res.status(200).render('main', {env: env, content: html, data: initialState});
-        }
         else {
-          res.status(404).render('404');
+          res.status(200).sendfile('/');
         }
       });
     });

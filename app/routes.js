@@ -7,7 +7,7 @@ import NoMatch from './components/NoMatch';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={Main} />
+    <IndexRoute path="/" component={Main} />
     <Route path="/counter" component={Counter} />
     <Route path="/*" component={NoMatch} />
   </Route>
