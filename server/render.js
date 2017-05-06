@@ -40,7 +40,7 @@ export default React => (store, renderProps = {}, err = null) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="description" content="">
-        <title>Baus Boilerplate</title>
+        <title>EliMcJah</title>
         ${ styles }
       </head>
       <body>

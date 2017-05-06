@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from 'containers/App';
 import Home from 'containers/Home';
 import Counter from 'containers/Counter';
+import Posts from 'containers/Posts';
 
 if (typeof module !== 'undefined' && module.require) {
   if (typeof require.ensure === 'undefined') {
@@ -15,6 +16,7 @@ export function getRoutes () {
     <Route path="/" component={ App }>
       <IndexRoute component={ Home } />
       <Route path="/counter" component={ Counter } />
+      <Route path="/posts" component={ Posts } />
       <Route path="/*" getComponent={ getErrPage } />
     </Route>
   );
